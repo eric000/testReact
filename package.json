@@ -4,5 +4,8 @@
   "description": "test react",
   "main": "index.js",
   "author": "weiweicat",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "3.10.0"
+  }
 }
