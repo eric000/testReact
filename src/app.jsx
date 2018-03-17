@@ -1,12 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'font-awesome/css/font-awesome.min.css'
-import './base.css'
-import './sty.styl'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, Switch, Redirect, Route, Link } from 'react-router-dom'
+import './base.styl'
+import Home from '@pages/Home.jsx'
+
 ReactDOM.render(
-  <div>
-    <i className="fas fa-camera-retro"></i>
-    <h1>Hello, world!</h1>
-  </div>,
-  document.getElementById('app')
+    <Router>
+        <Switch>
+            <Route exact path="/" component={Home}/>
+            <Redirect from="*" to="/"/>
+        </Switch>
+    </Router>,
+    document.getElementById('app')
 );

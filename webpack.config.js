@@ -6,8 +6,14 @@ module.exports = {
     entry: './src/app.jsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js/bundle.js',
-        publicPath: '/dist/'
+        filename: 'js/bundle.js'
+        // publicPath: '/dist/'
+    },
+    resolve: {
+        alias: {
+            '@pages': path.resolve(__dirname, 'src/pages'),
+            '@component': path.resolve(__dirname, 'src/component')
+        }
     },
     plugins: [
         //html处理
@@ -23,8 +29,11 @@ module.exports = {
         })
     ],
     devServer: {
-        contentBase: './dist',
-        port: 8086
+        // contentBase: './dist',
+        port: 8086,
+        historyApiFallback: {
+            index: '/dist/index.html'
+        }
     },
     module: {
         rules :[
