@@ -18,7 +18,8 @@ module.exports = {
     plugins: [
         //html处理
         new htmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.html',
+            favicon: path.resolve(__dirname, 'favicon.ico')
         }),
         //抽离css样式（打包在js时，加载时空白长）
         new ExtractTextPlugin("css/[name].css"),
