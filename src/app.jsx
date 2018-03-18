@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Switch, Redirect, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom'
 import './base.styl'
 import Home from '@pages/Home.jsx'
 
