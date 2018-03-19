@@ -3,13 +3,31 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom'
 import './base.styl'
 import Home from '@pages/Home.jsx'
+import Layout from '@component/Layout.jsx'
+
+class App extends React.Component{
+    render(){
+        let LayoutRouter = (
+            <Layout>
+                <Switch>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/product" component={Home}/>
+                    <Route path="/category" component={Home}/>
+                </Switch>
+            </Layout>
+        )
+        return (
+            <Router>
+                <Switch>
+                    <Route path="/login" component={Home}/>
+                    <Route path="/" render={ props => LayoutRouter}/>
+                </Switch>
+            </Router>
+        )
+    }
+}
 
 ReactDOM.render(
-    <Router>
-        <Switch>
-            <Route exact path="/" component={Home}/>
-            <Redirect from="*" to="/"/>
-        </Switch>
-    </Router>,
+    <App/>,
     document.getElementById('app')
 );

@@ -1,40 +1,31 @@
 import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
 
 class Side extends React.Component {
     render() {
         return (
             <aside className="menu">
-                <p className="menu-label">
-                    General
-                </p>
                 <ul className="menu-list">
-                    <li><a>Dashboard</a></li>
-                    <li><a>Customers</a></li>
+                    <li><NavLink exact activeClassName="is-active" to="/">首页</NavLink></li>
                 </ul>
                 <p className="menu-label">
-                    Administration
+                <span className="icon"><i className="fas fa-lg fa-chess-pawn"></i></span>商品
                 </p>
                 <ul className="menu-list">
-                    <li><a>Team Settings</a></li>
-                    <li>
-                    <a className="is-active">Manage Your Team</a>
-                    <ul>
-                        <li><a>Members</a></li>
-                        <li><a>Plugins</a></li>
-                        <li><a>Add a member</a></li>
-                    </ul>
-                    </li>
-                    <li><a>Invitations</a></li>
-                    <li><a>Cloud Storage Environment Settings</a></li>
-                    <li><a>Authentication</a></li>
+                    <li><NavLink activeClassName="is-active" to="/product">商品管理</NavLink></li>
+                    <li><NavLink activeClassName="is-active" to="/category">品类管理</NavLink></li>
                 </ul>
                 <p className="menu-label">
-                    Transactions
+                <span className="icon"><i className="fas fa-chess-knight fa-lg "></i></span>订单
                 </p>
                 <ul className="menu-list">
-                    <li><a>Payments</a></li>
-                    <li><a>Transfers</a></li>
-                    <li><a>Balance</a></li>
+                    <li><NavLink activeClassName="is-active" to="/order">订单管理</NavLink></li>
+                </ul>
+                <p className="menu-label">
+                    <span className="icon"><i className="fas fa-lg fa-chess"></i></span> 用户
+                </p>
+                <ul className="menu-list">
+                    <li><NavLink activeClassName="is-active" to="/user">用户管理</NavLink></li>
                 </ul>
             </aside>
         )
