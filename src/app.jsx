@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom'
 import './base.styl'
 import Home from '@pages/Home.jsx'
+import Login from '@pages/Login.jsx'
 import Layout from '@component/Layout.jsx'
 
 class App extends React.Component{
@@ -19,7 +20,7 @@ class App extends React.Component{
         return (
             <Router>
                 <Switch>
-                    <Route path="/login" component={Home}/>
+                    <Route path="/login" component={Login}/>
                     <Route path="/" render={ props => LayoutRouter}/>
                 </Switch>
             </Router>
