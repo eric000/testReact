@@ -1,4 +1,5 @@
 import React from "react"
+import ajax from '@util/ajax.js'
 
 class Login extends React.Component{
     constructor(props) {
@@ -11,6 +12,14 @@ class Login extends React.Component{
     onInputChange (e) {
         this.setState({
             [e.target.name]: e.target.value
+        })
+    }
+    submit(e) {
+        const login = new ajax('/user/login.do', this.state)
+        login.init().then(res => {
+            console.log(res)
+        }, (res) => {
+            console.log(res)
         })
     }
     render() {
@@ -37,7 +46,7 @@ class Login extends React.Component{
                     </div>
                     <div className="field">
                         <p className="control">
-                            <button className="button is-success">
+                            <button onClick={(e) => this.submit(e)} className="button is-success">
                             Login
                             </button>
                         </p>

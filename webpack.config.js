@@ -12,7 +12,8 @@ module.exports = {
     resolve: {
         alias: {
             '@pages': path.resolve(__dirname, 'src/pages'),
-            '@component': path.resolve(__dirname, 'src/component')
+            '@component': path.resolve(__dirname, 'src/component'),
+            '@util': path.resolve(__dirname, 'src/util')
         }
     },
     plugins: [
@@ -34,6 +35,12 @@ module.exports = {
         port: 8086,
         historyApiFallback: {
             index: '/dist/index.html'
+        },
+        proxy: {
+            '/user': {
+                target: 'http://adminv2.happymmall.com',
+                changeOrigin : true
+            }
         }
     },
     module: {
